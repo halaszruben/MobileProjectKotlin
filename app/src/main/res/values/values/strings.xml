@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">WOWQuizz</string>
+    <string name="test_your_skill">Test Your Skill!</string>
+    <string name="world_of_warcraft_edition">World of Warcraft Edition</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
