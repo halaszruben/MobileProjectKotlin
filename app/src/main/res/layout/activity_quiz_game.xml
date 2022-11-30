@@ -1,130 +1,136 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:fillViewport="true"
-    android:background="@drawable/orcvshuman"
-    tools:context=".QuizGame">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <LinearLayout
+    <data>
+
+    </data>
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center"
-        android:padding="16dp">
-
-        <TextView
-            android:id="@+id/textView_questions"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:gravity="center"
-            android:textColor="#FF5722"
-            android:textSize="24sp"
-            android:text="The Victory depends on You alone!"
-            android:textStyle="bold"/>
-
-        <ImageView
-            android:id="@+id/imageView_images"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:src="@drawable/grizzlyhills"/>
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:background="@drawable/orcvshuman"
+        tools:context=".QuizGame">
 
         <LinearLayout
-            android:id="@+id/progress_detail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            android:outlineAmbientShadowColor="@color/white">
-
-            <ProgressBar
-                android:id="@+id/progress_bar"
-                style="?android:attr/progressBarStyleHorizontal"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:max="10"
-                android:minHeight="50dp"
-                android:progress="0"
-                android:indeterminate="false" />
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="16dp">
 
             <TextView
-                android:id="@+id/textView_progress"
+                android:id="@+id/textView_questions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:gravity="center"
+                android:textColor="#FF5722"
+                android:textSize="24sp"
+                android:text="The Victory depends on You alone!"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/imageView_images"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/grizzlyhills" />
+
+            <LinearLayout
+                android:id="@+id/progress_detail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:outlineAmbientShadowColor="@color/white">
+
+                <ProgressBar
+                    android:id="@+id/progress_bar"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:max="10"
+                    android:minHeight="50dp"
+                    android:progress="0"
+                    android:indeterminate="false" />
+
+                <TextView
+                    android:id="@+id/textView_progress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:textColor="#00BCD4"
+                    android:textSize="20sp"
+                    tools:text="0/10" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/answer_option_one"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/default_option_border_bg"
                 android:gravity="center"
-                android:padding="10dp"
-                android:textColor="#00BCD4"
+                android:padding="15dp"
+                android:text="'You no take candle'"
+                android:textColor="#2ED335"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/answer_option_two"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/default_option_border_bg"
+                android:gravity="center"
+                android:padding="15dp"
+                android:textColor="#2ED335"
+                android:textSize="18sp"
+                android:text="'You made me what I am. You left me to pick up your pieces!'" />
+
+            <TextView
+                android:id="@+id/answer_option_three"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/default_option_border_bg"
+                android:gravity="center"
+                android:padding="15dp"
+                android:textColor="#2ED335"
+                android:textSize="18sp"
+                android:text="'You are not prepared'" />
+
+            <TextView
+                android:id="@+id/answer_option_four"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/default_option_border_bg"
+                android:gravity="center"
+                android:padding="15dp"
+                android:textColor="#2ED335"
+                android:textSize="18sp"
+                android:text="'No king rules forever, my son.'" />
+
+            <Button
+                android:id="@+id/btn_submit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:background="@android:color/holo_orange_dark"
+                android:text="'Ook?'"
+                android:textColor="@color/white"
                 android:textSize="20sp"
-                tools:text="0/10"/>
+                android:textStyle="bold" />
 
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/answer_option_one"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:background="@drawable/default_option_border_bg"
-            android:gravity="center"
-            android:padding="15dp"
-            android:text="'You no take candle'"
-            android:textColor="#2ED335"
-            android:textSize="18sp" />
-
-        <TextView
-            android:id="@+id/answer_option_two"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:background="@drawable/default_option_border_bg"
-            android:gravity="center"
-            android:padding="15dp"
-            android:textColor="#2ED335"
-            android:textSize="18sp"
-            android:text="'You made me what I am. You left me to pick up your pieces!'"/>
-
-        <TextView
-            android:id="@+id/answer_option_three"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:background="@drawable/default_option_border_bg"
-            android:gravity="center"
-            android:padding="15dp"
-            android:textColor="#2ED335"
-            android:textSize="18sp"
-            android:text="'You are not prepared'"/>
-
-        <TextView
-            android:id="@+id/answer_option_four"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:background="@drawable/default_option_border_bg"
-            android:gravity="center"
-            android:padding="15dp"
-            android:textColor="#2ED335"
-            android:textSize="18sp"
-            android:text="'No king rules forever, my son.'"/>
-
-        <Button
-            android:id="@+id/btn_submit"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="15dp"
-            android:background="@android:color/holo_orange_dark"
-            android:text="'Ook?'"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            />
-
-    </LinearLayout>
-
-</ScrollView>
+    </ScrollView>
+</layout>

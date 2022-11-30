@@ -1,74 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/hornforthevictory"
-    android:orientation="vertical"
-    android:gravity="left"
-    android:padding="10dp"
-    tools:context=".Result">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <TextView
-        android:id="@+id/textView_result"
+    <data>
+
+    </data>
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_marginTop="20dp"
-        android:text="It was hard fought, but you managed Hero!"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        android:textStyle="bold" />
+        android:layout_height="match_parent"
+        android:background="@drawable/hornforthevictory"
+        android:orientation="vertical"
+        android:gravity="left"
+        android:padding="10dp"
+        tools:context=".Result">
 
-    <TextView
-        android:id="@+id/tv_congrats"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="Congratulations for your victory!"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        android:textStyle="bold"/>
+        <TextView
+            android:id="@+id/textView_result"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="20dp"
+            android:text="It was hard fought, but you managed Hero!"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/tv_heroname"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_marginTop="15dp"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        tools:text="Arthas Menethil"/>
+        <TextView
+            android:id="@+id/tv_congrats"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Congratulations for your victory!"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/tv_finalscore"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_marginTop="10dp"
-        android:textColor="#D50000"
-        android:textSize="18sp"
-        android:textStyle="italic"
-        tools:text="10 out of 10"/>
+        <TextView
+            android:id="@+id/tv_heroname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="15dp"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            tools:text="Arthas Menethil" />
 
-    <Button
-        android:id="@+id/btn_finish"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:text="End the journey"
-        android:textColor="@color/white"
-        android:textStyle="bold"/>
+        <TextView
+            android:id="@+id/tv_finalscore"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:textColor="#D50000"
+            android:textSize="18sp"
+            android:textStyle="italic"
+            tools:text="10 out of 10" />
+
+        <Button
+            android:id="@+id/btn_finish"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="End the journey"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
 
 
-    <ImageView
-        android:id="@+id/imageView_trophy"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:contentDescription="image"
-        android:layout_marginTop="250dp"
-        android:src="@drawable/trophy" />
+        <ImageView
+            android:id="@+id/imageView_trophy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="image"
+            android:layout_marginTop="250dp"
+            android:src="@drawable/trophy" />
 
-</LinearLayout>
+    </LinearLayout>
+</layout>
