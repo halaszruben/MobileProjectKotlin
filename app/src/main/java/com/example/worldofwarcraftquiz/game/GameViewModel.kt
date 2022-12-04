@@ -1,24 +1,39 @@
 package com.example.worldofwarcraftquiz.game
 
+import android.os.CountDownTimer
+import android.text.format.DateUtils
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.Transformations
 import androidx.lifecycle.ViewModel
 
-class GameViewModel: ViewModel() {
-    private var _score = MutableLiveData<Int>()
-    val score: LiveData<Int>
-        get() = _score
+class GameViewModel : ViewModel() {
 
-    fun onWrong() {
-        _score.value = (score.value)?.minus(1)
+    private val _currentTimer = MutableLiveData<Long>()
+    val currentTimer: LiveData<Long>
+        get() = _currentTimer
+
+    val currentTimeToString = Transformations.map(currentTimer) { time ->
+        DateUtils.formatElapsedTime(time)
     }
 
-    fun onCorrect() {
-        _score.value = (score.value)?.plus(1)
-    }
+    private val timer: CountDownTimer
 
     init {
-        _score.value = 0
+        timer = object : CountDownTimer(300000, 1000) {
+            override fun onTick(p0: Long) {
+                _currentTimer.value = p0 / 1000
+            }
+
+            override fun onFinish() {
+                _currentTimer.value = 0
+            }
+        }
+        timer.start()
     }
 
+    override fun onCleared() {
+        super.onCleared()
+        timer.cancel()
+    }
 }

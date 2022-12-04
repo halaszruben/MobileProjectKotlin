@@ -4,6 +4,9 @@
 
     <data>
 
+        <variable
+            name="endViewModel"
+            type="com.example.worldofwarcraftquiz.end.EndViewModel" />
     </data>
 
     <FrameLayout
@@ -15,8 +18,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/hornforthevictory"
-            android:orientation="vertical"
             android:gravity="left"
+            android:orientation="vertical"
             android:padding="10dp"
             tools:context=".Result">
 
@@ -24,8 +27,8 @@
                 android:id="@+id/textView_result"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
                 android:layout_marginTop="20dp"
+                android:gravity="center"
                 android:text="It was hard fought, but you managed Hero!"
                 android:textColor="@color/white"
                 android:textSize="20sp"
@@ -42,44 +45,56 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/tv_heroname"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:layout_marginTop="15dp"
+                android:text="You got right: "
                 android:textColor="@color/white"
                 android:textSize="20sp"
-                android:textStyle="bold"
-                tools:text="Arthas Menethil" />
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/tv_finalscore"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
                 android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="@{String.valueOf(endViewModel.answered)}"
                 android:textColor="#D50000"
                 android:textSize="18sp"
-                android:textStyle="italic"
-                tools:text="10 out of 10" />
+                android:textStyle="italic" />
+
 
             <Button
                 android:id="@+id/btn_finish"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="End the journey"
+                android:onClick="@{() -> endViewModel.onPlayAgain()}"
+                android:text="Ready, to go again?"
                 android:textColor="@color/white"
                 android:textStyle="bold" />
-
 
             <ImageView
                 android:id="@+id/imageView_trophy"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:contentDescription="image"
                 android:layout_marginTop="250dp"
+                android:contentDescription="image"
                 android:src="@drawable/trophy" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="The Fallen Ones:"
+                android:textColor="@color/white"
+                android:textSize="20dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:listitem="@layout/list_legendary_names"  />
 
         </LinearLayout>
 

@@ -1,21 +1,17 @@
 package com.example.worldofwarcraftquiz.game
 
-import android.graphics.Color
-import android.graphics.Typeface
-import android.graphics.Typeface.BOLD
 import android.os.Bundle
-import android.os.Handler
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
-import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import com.example.worldofwarcraftquiz.R
 import com.example.worldofwarcraftquiz.databinding.FragmentGameBinding
-import kotlinx.coroutines.flow.callbackFlow
+import com.example.worldofwarcraftquiz.end.EndViewModel
+import com.example.worldofwarcraftquiz.end.EndViewModelFactory
 
 class GameFragment : Fragment() {
 
@@ -85,6 +81,8 @@ class GameFragment : Fragment() {
     private var mNumberQuestion: Int = questionsList.size
     private var mQuestionIndex: Int = 0
 
+    lateinit var viewModel: GameViewModel
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -94,6 +92,10 @@ class GameFragment : Fragment() {
             inflater,
             R.layout.fragment_game, container, false
         )
+
+        viewModel = ViewModelProvider(this).get(GameViewModel::class.java)
+        binding.gameViewModel = viewModel
+        binding.lifecycleOwner = viewLifecycleOwner
 
         randomizeQuestions()
 
@@ -132,9 +134,7 @@ class GameFragment : Fragment() {
 
                     } else {
                         view.findNavController().navigate(
-                            GameFragmentDirections.navigateToEndFragment(
-                                mQuestionIndex
-                            )
+                            GameFragmentDirections.navigateToEndFragment(mNumberQuestion)
                         )
                     }
                 } else {

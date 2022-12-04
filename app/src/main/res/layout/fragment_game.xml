@@ -6,12 +6,13 @@
     <data>
 
         <variable
+            name="game"
+            type="com.example.worldofwarcraftquiz.game.GameFragment" />
+
+        <variable
             name="gameViewModel"
             type="com.example.worldofwarcraftquiz.game.GameViewModel" />
 
-        <variable
-            name="game"
-            type="com.example.worldofwarcraftquiz.game.GameFragment" />
     </data>
 
     <FrameLayout
@@ -54,6 +55,18 @@
                     android:src="@drawable/grizzlyhills" />
 
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:padding="15sp"
+                    android:text="@{gameViewModel.currentTimeToString}"
+                    android:textColor="@color/white"
+                    android:textSize="30dp"
+                    android:textStyle="italic"
+                    tools:text="0:00" />
+
                 <RadioGroup
                     android:id="@+id/questionRadioGroup"
                     android:layout_width="290dp"
@@ -71,6 +84,7 @@
                         android:id="@+id/firstAnswer"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
                         android:background="@drawable/default_option_border_bg"
                         android:checked="false"
                         android:gravity="center"
@@ -78,13 +92,13 @@
                         android:text="@{game.mAnswers[0]}"
                         android:textColor="#2ED335"
                         android:textSize="18sp"
-                        tools:text="'No king rules forever, my son.'"
-                        android:layout_marginBottom="10dp"/>
+                        tools:text="'No king rules forever, my son.'" />
 
                     <RadioButton
                         android:id="@+id/secondAnswer"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
                         android:background="@drawable/default_option_border_bg"
                         android:checked="false"
                         android:gravity="center"
@@ -92,13 +106,13 @@
                         android:text="@{game.mAnswers[1]}"
                         android:textColor="#2ED335"
                         android:textSize="18sp"
-                        tools:text="'You are not prepared'"
-                        android:layout_marginBottom="10dp"/>
+                        tools:text="'You are not prepared'" />
 
                     <RadioButton
                         android:id="@+id/thirdAnswer"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
                         android:background="@drawable/default_option_border_bg"
                         android:checked="false"
                         android:gravity="center"
@@ -106,13 +120,13 @@
                         android:text="@{game.mAnswers[2]}"
                         android:textColor="#2ED335"
                         android:textSize="18sp"
-                        tools:text="'You made me what I am. You left me to pick up your pieces!'"
-                        android:layout_marginBottom="10dp"/>
+                        tools:text="'You made me what I am. You left me to pick up your pieces!'" />
 
                     <RadioButton
                         android:id="@+id/fourthAnswer"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
                         android:background="@drawable/default_option_border_bg"
                         android:checked="false"
                         android:gravity="center"
@@ -120,8 +134,7 @@
                         android:text="@{game.mAnswers[3]}"
                         android:textColor="#2ED335"
                         android:textSize="18sp"
-                        tools:text="'You no take candle'"
-                        android:layout_marginBottom="10dp"/>
+                        tools:text="'You no take candle'" />
 
                 </RadioGroup>
 

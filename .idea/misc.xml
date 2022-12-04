@@ -8,8 +8,14 @@
         <entry key="..\:/5. Felev/MOBIL/Project0/app/src/main/res/drawable/selected_option_border_bg.xml" value="0.247" />
         <entry key="..\:/5. Felev/MOBIL/Project0/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
         <entry key="..\:/5. Felev/MOBIL/Project0/app/src/main/res/layout/fragment_end.xml" value="0.25416666666666665" />
-        <entry key="..\:/5. Felev/MOBIL/Project0/app/src/main/res/layout/fragment_game.xml" value="0.6455026455026455" />
+        <entry key="..\:/5. Felev/MOBIL/Project0/app/src/main/res/layout/fragment_end_questions.xml" value="0.1" />
+        <entry key="..\:/5. Felev/MOBIL/Project0/app/src/main/res/layout/fragment_game.xml" value="0.264" />
         <entry key="..\:/5. Felev/MOBIL/Project0/app/src/main/res/layout/fragment_home.xml" value="0.1" />
+        <entry key="..\:/5. Felev/MOBIL/Project0/app/src/main/res/layout/fragment_new_question_game.xml" value="0.2" />
+        <entry key="..\:/5. Felev/MOBIL/Project0/app/src/main/res/layout/list_legendary_names.xml" value="0.264" />
+        <entry key="..\:/5. Felev/MOBIL/ProjectFragment/MobileProjectKotlin/app/src/main/res/layout/fragment_end.xml" value="0.25416666666666665" />
+        <entry key="..\:/5. Felev/MOBIL/ProjectFragment/MobileProjectKotlin/app/src/main/res/layout/fragment_game.xml" value="0.25416666666666665" />
+        <entry key="..\:/5. Felev/MOBIL/ProjectFragment/MobileProjectKotlin/app/src/main/res/layout/fragment_home.xml" value="0.25416666666666665" />
       </map>
     </option>
   </component>

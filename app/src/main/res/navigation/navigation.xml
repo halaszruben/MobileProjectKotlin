@@ -21,13 +21,11 @@
         android:label="fragment_game"
         tools:layout="@layout/fragment_game" >
         <action
-            android:id="@+id/navigateToEndFragment"
-            app:destination="@id/endFragment"
-            app:popUpTo="@id/gameFragment"
-            app:popUpToInclusive="true" />
-        <action
             android:id="@+id/navigateToHomeFragment"
             app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/navigateToEndFragment"
+            app:destination="@id/endFragment" />
 
     </fragment>
     <fragment
