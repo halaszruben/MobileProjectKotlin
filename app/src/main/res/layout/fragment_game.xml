@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="gameViewModel"
+            type="com.example.worldofwarcraftquiz.game.GameViewModel" />
+
+        <variable
+            name="game"
+            type="com.example.worldofwarcraftquiz.game.GameFragment" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".game.GameFragment">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/orcvshuman"
+            android:fillViewport="true"
+            tools:context=".QuizGame">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/textView_questions"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:layout_marginBottom="15sp"
+                    android:gravity="center"
+                    android:text="@{game.MQuestion.question}"
+                    android:textColor="#FF5722"
+                    android:textSize="30dp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/imageView_images"
+                    imageResource="@{game.MQuestion.img}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/grizzlyhills" />
+
+
+                <RadioGroup
+                    android:id="@+id/questionRadioGroup"
+                    android:layout_width="290dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15sp"
+                    android:layout_marginTop="15sp"
+                    android:layout_marginEnd="15sp"
+                    android:animateLayoutChanges="true"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/questionText">
+
+                    <RadioButton
+                        android:id="@+id/firstAnswer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/default_option_border_bg"
+                        android:checked="false"
+                        android:gravity="center"
+                        android:padding="15sp"
+                        android:text="@{game.mAnswers[0]}"
+                        android:textColor="#2ED335"
+                        android:textSize="18sp"
+                        tools:text="'No king rules forever, my son.'"
+                        android:layout_marginBottom="10dp"/>
+
+                    <RadioButton
+                        android:id="@+id/secondAnswer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/default_option_border_bg"
+                        android:checked="false"
+                        android:gravity="center"
+                        android:padding="15sp"
+                        android:text="@{game.mAnswers[1]}"
+                        android:textColor="#2ED335"
+                        android:textSize="18sp"
+                        tools:text="'You are not prepared'"
+                        android:layout_marginBottom="10dp"/>
+
+                    <RadioButton
+                        android:id="@+id/thirdAnswer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/default_option_border_bg"
+                        android:checked="false"
+                        android:gravity="center"
+                        android:padding="15sp"
+                        android:text="@{game.mAnswers[2]}"
+                        android:textColor="#2ED335"
+                        android:textSize="18sp"
+                        tools:text="'You made me what I am. You left me to pick up your pieces!'"
+                        android:layout_marginBottom="10dp"/>
+
+                    <RadioButton
+                        android:id="@+id/fourthAnswer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/default_option_border_bg"
+                        android:checked="false"
+                        android:gravity="center"
+                        android:padding="15sp"
+                        android:text="@{game.mAnswers[3]}"
+                        android:textColor="#2ED335"
+                        android:textSize="18sp"
+                        tools:text="'You no take candle'"
+                        android:layout_marginBottom="10dp"/>
+
+                </RadioGroup>
+
+                <Button
+                    android:id="@+id/btn_submit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:background="@android:color/holo_orange_dark"
+                    android:text="'Ook?'"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </FrameLayout>
+</layout>

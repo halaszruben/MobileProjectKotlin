@@ -3,13 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/5. Felev/MOBIL/MobileProjectKotlin/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
-        <entry key="..\:/5. Felev/MOBIL/MobileProjectKotlin/app/src/main/res/layout/activity_quiz_game.xml" value="0.25416666666666665" />
-        <entry key="..\:/5. Felev/MOBIL/MobileProjectKotlin/app/src/main/res/layout/activity_result.xml" value="0.25416666666666665" />
-        <entry key="..\:/5. Felev/MobilAlkalmazas/Project/MobileProjectKotlin/app/src/main/res/drawable/wrong_option_border_bg.xml" value="0.1" />
-        <entry key="..\:/5. Felev/MobilAlkalmazas/Project/MobileProjectKotlin/app/src/main/res/layout/activity_main.xml" value="0.12335359675785208" />
-        <entry key="..\:/5. Felev/MobilAlkalmazas/Project/MobileProjectKotlin/app/src/main/res/layout/activity_quiz_game.xml" value="0.1" />
-        <entry key="..\:/5. Felev/MobilAlkalmazas/Project/MobileProjectKotlin/app/src/main/res/layout/activity_result.xml" value="0.25416666666666665" />
+        <entry key="..\:/5. Felev/MOBIL/Project0/app/src/main/res/drawable/correct_option_border_bg.xml" value="0.198" />
+        <entry key="..\:/5. Felev/MOBIL/Project0/app/src/main/res/drawable/default_option_border_bg.xml" value="0.247" />
+        <entry key="..\:/5. Felev/MOBIL/Project0/app/src/main/res/drawable/selected_option_border_bg.xml" value="0.247" />
+        <entry key="..\:/5. Felev/MOBIL/Project0/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/5. Felev/MOBIL/Project0/app/src/main/res/layout/fragment_end.xml" value="0.25416666666666665" />
+        <entry key="..\:/5. Felev/MOBIL/Project0/app/src/main/res/layout/fragment_game.xml" value="0.6455026455026455" />
+        <entry key="..\:/5. Felev/MOBIL/Project0/app/src/main/res/layout/fragment_home.xml" value="0.1" />
       </map>
     </option>
   </component>
