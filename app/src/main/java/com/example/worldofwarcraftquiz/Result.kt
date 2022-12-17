@@ -1,11 +1,10 @@
 package com.example.wowquizz
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.widget.TextView
-import com.example.wowquizz.databinding.ActivityResultBinding
+import androidx.appcompat.app.AppCompatActivity
+import com.example.worldofwarcraftquiz.MainActivity
+import com.example.worldofwarcraftquiz.databinding.ActivityResultBinding
 
 class Result : AppCompatActivity() {
 

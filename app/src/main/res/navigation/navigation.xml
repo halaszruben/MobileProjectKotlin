@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.worldofwarcraftquiz.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/navigateToGameFragment"
+            app:destination="@id/gameFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/gameFragment"
+        android:name="com.example.worldofwarcraftquiz.game.GameFragment"
+        android:label="fragment_game"
+        tools:layout="@layout/fragment_game" >
+        <action
+            android:id="@+id/navigateToHomeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/navigateToEndFragment"
+            app:destination="@id/endFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/endFragment"
+        android:name="com.example.worldofwarcraftquiz.end.EndFragment"
+        android:label="fragment_end"
+        tools:layout="@layout/fragment_end" >
+        <action
+            android:id="@+id/navigateToHomeFragment"
+            app:destination="@id/homeFragment" />
+        <argument
+            android:name="correctQuestions"
+            app:argType="integer" />
+    </fragment>
+</navigation>

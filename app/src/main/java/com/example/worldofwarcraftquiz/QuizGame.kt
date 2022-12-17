@@ -9,8 +9,8 @@ import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import com.example.wowquizz.databinding.ActivityMainBinding
-import com.example.wowquizz.databinding.ActivityQuizGameBinding
+import com.example.worldofwarcraftquiz.R
+import com.example.worldofwarcraftquiz.databinding.ActivityQuizGameBinding
 
 class QuizGame : AppCompatActivity(), View.OnClickListener {
     data class Question(
