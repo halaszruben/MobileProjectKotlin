@@ -78,7 +78,7 @@ class GameFragment : Fragment() {
 
     lateinit var mQuestion: Question
     lateinit var mAnswers: MutableList<String>
-    private var mNumberQuestion: Int = questionsList.size
+    private var mNumberQuestion: Int = 1 //questionsList.size
     private var mQuestionIndex: Int = 0
 
     lateinit var viewModel: GameViewModel

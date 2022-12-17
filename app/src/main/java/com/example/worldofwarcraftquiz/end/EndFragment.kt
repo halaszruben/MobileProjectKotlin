@@ -54,7 +54,6 @@ class EndFragment : Fragment() {
         getHeroData()
 
 
-
         viewModelFactory =
             EndViewModelFactory(EndFragmentArgs.fromBundle(requireArguments()).correctQuestions)
         viewModel = ViewModelProvider(this, viewModelFactory).get(EndViewModel::class.java)
@@ -66,6 +65,7 @@ class EndFragment : Fragment() {
                 viewModel.onPlayAgainComplete()
             }
         })
+
 
         return binding.root
     }

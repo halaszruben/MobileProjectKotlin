@@ -40,4 +40,5 @@
             android:name="correctQuestions"
             app:argType="integer" />
     </fragment>
+
 </navigation>
