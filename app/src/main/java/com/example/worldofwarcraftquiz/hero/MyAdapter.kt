@@ -1,40 +1,58 @@
 package com.example.worldofwarcraftquiz.hero
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
+import androidx.recyclerview.widget.AsyncListDiffer
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.example.worldofwarcraftquiz.R
-import java.util.ArrayList
+import com.example.worldofwarcraftquiz.databinding.ListLegendaryNamesBinding
 
-class MyAdapter(private val heroList: ArrayList<Hero>) :
-    RecyclerView.Adapter<MyAdapter.MyViewHolder>() {
+class MyAdapter : RecyclerView.Adapter<MyAdapter.ViewHolder>() {
 
+    private lateinit var binding: ListLegendaryNamesBinding
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.list_legendary_names,
-        parent, false)
-        return MyViewHolder(itemView)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyAdapter.ViewHolder {
+        binding =
+            ListLegendaryNamesBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return ViewHolder()
     }
 
-    override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-
-        val currentItem = heroList[position]
-        holder.image.setImageResource(currentItem.mHeroImg)
-        holder.name.text = currentItem.mHeroName
+    override fun onBindViewHolder(holder: MyAdapter.ViewHolder, position: Int) {
+        holder.setData(differ.currentList[position])
+        holder.setIsRecyclable(false)
     }
 
-    override fun getItemCount(): Int {
+    override fun getItemCount() = differ.currentList.size
 
-        return heroList.size
+    inner class ViewHolder : RecyclerView.ViewHolder(binding.root) {
+        fun setData(item: Hero) {
+            binding.apply {
+                tvId.text = item.id.toString()
+                tvHeroname.text = item.name
+                tvRole.text = item.role
+            }
+        }
+
     }
 
-    class MyViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
-        val image : ImageView = itemView.findViewById(R.id.title_image)
-        val name : TextView = itemView.findViewById(R.id.tvHeading)
+    private val differCallback = object : DiffUtil.ItemCallback<Hero>() {
+        override fun areItemsTheSame(oldItem: Hero, newItem: Hero): Boolean {
+            return oldItem.id == newItem.id
+        }
+
+        @SuppressLint("DiffUtilEquals")
+        override fun areContentsTheSame(oldItem: Hero, newItem: Hero): Boolean {
+            return oldItem == newItem
+        }
 
     }
+
+    val differ = AsyncListDiffer(this, differCallback)
+
+}
+
+class OnClickListener(val clickListener: (hero: Hero) -> Unit) {
+    fun onClick(hero: Hero) = clickListener(hero)
 }

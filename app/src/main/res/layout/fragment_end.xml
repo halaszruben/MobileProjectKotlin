@@ -14,6 +14,7 @@
         android:layout_height="match_parent"
         tools:context=".end.EndFragment">
 
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -59,8 +60,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:gravity="center"
+                android:hint="10"
                 android:text="@{String.valueOf(endViewModel.answered)}"
-                android:textColor="#D50000"
+                android:textColor="#64DD17"
                 android:textSize="18sp"
                 android:textStyle="italic" />
 
@@ -86,8 +88,8 @@
             <ImageView
                 android:id="@+id/imageView_trophy"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="250dp"
+                android:layout_height="81dp"
+                android:layout_marginTop="210dp"
                 android:contentDescription="image"
                 android:src="@drawable/trophy" />
 
@@ -96,14 +98,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="The Fallen Ones:"
-                android:textColor="@color/white"
+                android:textColor="?attr/colorAccent"
                 android:textSize="20dp" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerView"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                tools:listitem="@layout/list_legendary_names" />
+                android:layout_height="match_parent" />
 
         </LinearLayout>
 

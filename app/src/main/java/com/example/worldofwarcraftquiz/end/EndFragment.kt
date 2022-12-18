@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -22,10 +23,7 @@ class EndFragment : Fragment() {
     private lateinit var viewModel: EndViewModel
     private lateinit var viewModelFactory: EndViewModelFactory
 
-    private lateinit var recyclerView: RecyclerView
-    private lateinit var arrayList: ArrayList<Hero>
-    lateinit var imgID: Array<Int>
-    lateinit var heading: Array<String>
+    private val myAdapter by lazy { MyAdapter() }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -36,24 +34,14 @@ class EndFragment : Fragment() {
             R.layout.fragment_end, container, false
         )
 
+        myAdapter.differ.submitList(loadData())
 
-        imgID = arrayOf(
-            R.drawable.voljin,
-            R.drawable.kicsivarian
-        )
-
-        heading = arrayOf(
-            "Vol'Jin",
-            "Varian"
-        )
-
-        recyclerView = binding.recyclerView
-        recyclerView.layoutManager = LinearLayoutManager(context)
-        recyclerView.setHasFixedSize(true)
-
-        arrayList = arrayListOf<Hero>()
-        getHeroData()
-
+        binding.apply {
+            recyclerView.apply {
+                layoutManager = LinearLayoutManager(context)
+                adapter=myAdapter
+            }
+        }
 
         viewModelFactory =
             EndViewModelFactory(EndFragmentArgs.fromBundle(requireArguments()).correctQuestions)
@@ -75,16 +63,23 @@ class EndFragment : Fragment() {
         return binding.root
     }
 
-    private fun getHeroData() {
 
-        for (i in imgID.indices) {
-            val heroes = Hero(imgID[i], heading[i])
-            arrayList.add(heroes)
-        }
+    fun loadData() : MutableList<Hero>{
 
-        recyclerView.adapter = MyAdapter(arrayList)
+        val list : MutableList<Hero> = mutableListOf()
+
+        list.add(Hero(1, "Varian Wrynn", "King"))
+        list.add(Hero(2, "Vol'jin", "Warchief"))
+        list.add(Hero(3, "Varok Saurfang", "Warrior"))
+        list.add(Hero(4, "Grand Admiral Daelin Proudmoore", "Admiral"))
+
+
+
+        return list
 
     }
+
+
 
 
 }
