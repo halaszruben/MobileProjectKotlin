@@ -39,6 +39,18 @@
         <argument
             android:name="correctQuestions"
             app:argType="integer" />
+        <action
+            android:id="@+id/navigateToDb"
+            app:destination="@id/dbFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/dbFragment"
+        android:name="com.example.worldofwarcraftquiz.db.Db"
+        android:label="fragment_db"
+        tools:layout="@layout/fragment_db" >
+        <action
+            android:id="@+id/navigateToHomeFragment"
+            app:destination="@id/homeFragment" />
     </fragment>
 
 </navigation>

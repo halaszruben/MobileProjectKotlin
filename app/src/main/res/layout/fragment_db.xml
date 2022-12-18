@@ -1,0 +1,145 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/alliance"
+        tools:context=".db.Db">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:fontFamily="serif"
+            android:text="Greatest Heroes"
+            android:textColor="#AEEA00"
+            android:textSize="30dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:id="@+id/et_hero_name"
+            android:layout_width="255dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/default_option_border_bg"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="Hero Name"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+        <EditText
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:id="@+id/et_spec"
+            android:layout_width="255dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="101dp"
+            android:background="@drawable/default_option_border_bg"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="Spec"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_hero_name" />
+
+        <EditText
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:id="@+id/et_expansion"
+            android:layout_width="255dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/default_option_border_bg"
+            android:ems="10"
+            android:gravity="center"
+            android:hint="Expansion"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_spec" />
+
+        <Button
+            android:id="@+id/btn_write_data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Write Data"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_expansion" />
+
+
+        <Button
+            android:id="@+id/btnDeleteData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Delete All Data"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_write_data" />
+
+
+        <TextView
+            android:id="@+id/tv_heroname"
+            android:layout_width="130dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="56dp"
+            android:gravity="center"
+            android:hint="Hero Name"
+            android:textColor="#AEEA00"
+            android:textSize="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnDeleteData" />
+
+        <TextView
+            android:id="@+id/tv_spec"
+            android:layout_width="130dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="264dp"
+            android:layout_marginTop="56dp"
+            android:gravity="center"
+            android:hint="Spec"
+            android:textColor="#AEEA00"
+            android:textSize="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnDeleteData" />
+
+        <TextView
+            android:id="@+id/tv_expansion"
+            android:layout_width="114dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="148dp"
+            android:layout_marginTop="56dp"
+            android:gravity="center"
+            android:hint="Expansion"
+            android:textColor="#AEEA00"
+            android:textSize="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnDeleteData" />
+
+        <Button
+            android:id="@+id/btn_new_game"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Game"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnDeleteData"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

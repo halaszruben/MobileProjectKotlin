@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -65,6 +66,10 @@ class EndFragment : Fragment() {
                 viewModel.onPlayAgainComplete()
             }
         })
+
+        binding.btnData.setOnClickListener() { view: View ->
+            view.findNavController().navigate(EndFragmentDirections.navigateToDb())
+        }
 
 
         return binding.root
